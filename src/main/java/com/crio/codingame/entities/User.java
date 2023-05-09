@@ -14,6 +14,7 @@ public class User extends BaseEntity {
         this.name = name;
         this.score = score;
         this.contests = new ArrayList<Contest>();
+        toString();
     }
 
     public String getName() {
