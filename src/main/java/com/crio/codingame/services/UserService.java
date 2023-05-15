@@ -4,6 +4,7 @@ import java.lang.StackWalker.Option;
 import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
+import java.util.List;
 import java.util.stream.Collectors;
 
 import com.crio.codingame.dtos.UserRegistrationDto;
@@ -23,6 +24,7 @@ public class UserService implements IUserService {
     private final IUserRepository userRepository;
     private final IContestRepository contestRepository;
     private Integer autoIncrement=0;
+
     public UserService(IUserRepository userRepository, IContestRepository contestRepository) {
         this.userRepository = userRepository;
         this.contestRepository = contestRepository;

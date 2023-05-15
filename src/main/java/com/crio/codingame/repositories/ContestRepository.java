@@ -50,7 +50,6 @@ public class ContestRepository implements IContestRepository {
     }
     return cont;
     }
-
     @Override
     public Optional<Contest> findById(String id) {
         return Optional.ofNullable(contestMap.get(id));
