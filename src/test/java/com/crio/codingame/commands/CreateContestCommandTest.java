@@ -54,7 +54,7 @@ public class CreateContestCommandTest {
         @DisplayName("execute method of CreateContestCommand Should Print newly Created Contest To Console Given NumQuestions")
         public void execute_ShouldPrintContest_GivenNumQuestions() {
             //Arrange
-            String expectedOutput = "Contest [id=4, name=contest4, level=LOW, creator=user4, contestStatus=NOT_STARTED, questions=[]]";
+            String expectedOutput = "Contest [id=4, name=contest4, level=LOW, creator=user4, contestStatus=NOT_STARTED, questions=[Question [id=4, level=LOW, score=10, title=title4], Question [id=5, level=LOW, score=10, title=title5]]]";
             final List<Question> questionLow = new ArrayList<Question>(){
                 {
                     add(new Question("4", "title4", Level.LOW,10));

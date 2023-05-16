@@ -41,8 +41,7 @@ public class CreateContestCommand implements ICommand{
         }
 
         try{
-         Contest contest = contestService.create(contestName, level, contestCreator, numQuestion);
-         List<Question> df=contest.getQuestions();
+            Contest contest = contestService.create(contestName, level, contestCreator, numQuestion);
             System.out.println(contest);
         }
         catch(UserNotFoundException e){
