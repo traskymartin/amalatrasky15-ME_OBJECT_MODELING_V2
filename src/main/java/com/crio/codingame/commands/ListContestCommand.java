@@ -23,16 +23,16 @@ public class ListContestCommand implements ICommand{
 
     @Override
     public void execute(List<String> tokens) {
-        Level level;
-        if(tokens.size() == 1) {
-            level = null;
+        Level level=null;
+    
+        if(tokens.size()>1)
+        {
+            System.out.println(contestService.getAllContestLevelWise(Level.valueOf(tokens.get(1))));
         }
-        else {
-            level = Level.valueOf(tokens.get(1));
+        else
+        {
+            System.out.println(contestService.getAllContestLevelWise(null));
         }
-        
-        List<Contest> contestList = contestService.getAllContestLevelWise(level);
-        System.out.println(contestList);
     }
     
 }

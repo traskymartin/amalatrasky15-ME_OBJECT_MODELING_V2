@@ -30,22 +30,26 @@ public class CreateContestCommand implements ICommand{
     public void execute(List<String> tokens) {
         String contestName = tokens.get(1);
         Level level = Level.valueOf(tokens.get(2));
-        String creator = tokens.get(3);
+        String contestCreator = tokens.get(3);
         Integer numQuestion;
-        if(tokens.size() == 4) {
+
+        if(tokens.size()<=4){
             numQuestion = null;
         }
-        else {
-            numQuestion = Integer.valueOf(tokens.get(4));
+        else{
+            numQuestion = Integer.parseInt(tokens.get(4));
         }
-        
-        Contest contest; 
-        try {
-            contest = contestService.create(contestName, level, creator, numQuestion);
+
+        try{
+         Contest contest = contestService.create(contestName, level, contestCreator, numQuestion);
+         List<Question> df=contest.getQuestions();
             System.out.println(contest);
         }
-        catch(Exception e) {
-            System.out.println(e.getMessage());
+        catch(UserNotFoundException e){
+            System.out.println("Contest Creator for given name: creator not found!");
+        }
+        catch(QuestionNotFoundException e){
+            System.out.println("Request cannot be processed as enough number of questions can not found. Please try again later!");
         }
     }
     
