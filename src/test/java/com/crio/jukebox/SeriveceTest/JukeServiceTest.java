@@ -168,7 +168,7 @@ public void testCreatePlaylist() {
         int songId = songRepository.getSong(1).getSongNo();
     
         // Act
-        jukeBoxService.playSong("PLAY", userId, songId);
+        jukeBoxService.playSong( userId, "PLAY");
 
         // Assert
         // You can add more specific assertions based on your implementation

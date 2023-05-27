@@ -22,7 +22,7 @@ public class SongRepository {
         return songs.get(songId);
     }
 
-    public List<Song> getsong() {
+    public static List<Song> getsong() {
         List<Song> s=new ArrayList<>();
         for(Entry<Integer, Song> entry:songs.entrySet()){
             s.add(entry.getValue());
